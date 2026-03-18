@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="el" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Ειρήνη Γώγου | Ψυχολόγος - Ψυχοθεραπεύτρια Γκύζη</title>
+    <meta name="description" content="Ειρήνη Γώγου, Ψυχολόγος (BSc, MSc) - Συνθετική Ψυχοθεραπεία. Ολιστική φροντίδα από την παιδική ηλικία έως την ενηλικίωση. Κλείστε ραντεβού στο ιδιωτικό γραφείο στου Γκύζη.">
+    <meta name="keywords" content="Ψυχολόγος Γκύζη, Ειρήνη Γώγου, Συνθετική Ψυχοθεραπεία, Ψυχοθεραπεύτρια, Παιδοψυχολόγος, Θεραπεία Ενηλίκων">
+    <meta name="author" content="Advon Media">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22serif%22>ΕΓ</text></svg>" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        calm: {
+                            ocean: '#5C7484',  // Muted Slate Blue
+                            sand: '#D6CEC4',   // Warm Taupe/Beige
+                            blush: '#C2A3A8',  // Dusty Mauve/Pink
+                            stone: '#8B9298',  // Cool Grey
+                            dark: '#1C2329',   // Deep Blue/Grey for text/footer
+                            light: '#FAF9F8'   // Off-white background
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(92, 116, 132, 0.1)',
+                        'soft': '0 20px 40px -15px rgba(28, 35, 41, 0.08)',
+                        'glow': '0 0 40px -10px var(--glow-color)',
+                    },
+                    animation: {
+                        'blob': 'blob 12s infinite',
+                        'marquee': 'marquee 50s linear infinite',
+                        'kenburns': 'kenburns 20s ease-out both',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.05)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.95)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        },
+                        kenburns: {
+                            '0%': { transform: 'scale(1.1)' },
+                            '100%': { transform: 'scale(1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #FAF9F8; }
+        ::-webkit-scrollbar-thumb { background: #D6CEC4; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #5C7484; }
+
+        /* Typography Fix for purely visual semantics */
+        .calligraphy { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+
+        /* Reveal Animations */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.15s; }
+        .reveal-delay-2 { transition-delay: 0.3s; }
+
+        /* Glassmorphism */
+        .glass-panel {
+            background: rgba(250, 249, 248, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        /* Image Hover & Frame Effects */
+        .img-zoom { overflow: hidden; }
+        .img-zoom img { transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .img-zoom:hover img { transform: scale(1.04); }
+
+        /* Marquee specific */
+        .marquee-container { display: flex; width: 200%; }
+        .marquee-container:hover { animation-play-state: paused; }
+
+        /* Lightbox styling */
+        #lightbox {
+            opacity: 0; pointer-events: none; transition: opacity 0.5s ease;
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+        }
+        #lightbox.active { opacity: 1; pointer-events: auto; }
+        #lightbox img { transform: scale(0.95); transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        #lightbox.active img { transform: scale(1); }
+        
+        /* Doctoranytime Icon Override */
+        .da-icon { filter: grayscale(100%) opacity(0.6); transition: all 0.3s ease; }
+        .group:hover .da-icon { filter: grayscale(0%) opacity(1); }
+    </style>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-calm-light text-calm-dark font-sans antialiased overflow-x-hidden selection:bg-calm-blush selection:text-white">
+
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none opacity-40">
+        <div class="absolute top-[-10%] right-[-5%] w-[40vw] h-[40vw] rounded-full bg-calm-sand/30 mix-blend-multiply filter blur-[100px] animate-blob"></div>
+        <div class="absolute bottom-[-20%] left-[10%] w-[50vw] h-[50vw] rounded-full bg-calm-ocean/10 mix-blend-multiply filter blur-[120px] animate-blob" style="animation-delay: 4s;"></div>
+    </div>
+
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="glass-panel rounded-full flex justify-between items-center px-8 py-4 shadow-glass">
+                
+                <a href="#" class="flex flex-col group cursor-pointer">
+                    <span class="text-2xl md:text-3xl font-serif text-calm-dark leading-none group-hover:text-calm-ocean transition-colors">Ειρήνη Γώγου</span>
+                    <span class="text-[10px] uppercase tracking-[0.2em] text-calm-stone mt-1">ΨΥΧΟΛΟΓΟΣ • ΨΥΧΟΘΕΡΑΠΕΥΤΡΙΑ</span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-medium text-calm-stone hover:text-calm-ocean transition-colors">ΠΡΟΦΙΛ</a>
+                    <a href="#services" class="text-sm font-medium text-calm-stone hover:text-calm-ocean transition-colors">ΥΠΗΡΕΣΙΕΣ</a>
+                    <a href="#space" class="text-sm font-medium text-calm-stone hover:text-calm-ocean transition-colors">ΧΩΡΟΣ</a>
+                    <a href="#reviews" class="text-sm font-medium text-calm-stone hover:text-calm-ocean transition-colors">ΑΞΙΟΛΟΓΗΣΕΙΣ</a>
+                    <a href="#contact" class="px-7 py-2.5 bg-calm-ocean text-white rounded-full text-sm font-medium hover:bg-calm-dark hover:shadow-lg transition-all transform hover:-translate-y-0.5">ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ</a>
+                </div>
+
+                <button class="md:hidden text-calm-dark focus:outline-none" id="mobile-menu-btn">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="absolute top-full left-0 w-full bg-calm-light/95 backdrop-blur-xl shadow-xl hidden flex-col items-center py-8 space-y-6 border-t border-calm-sand/20">
+            <a href="#about" class="text-lg font-medium text-calm-dark mobile-link">ΠΡΟΦΙΛ</a>
+            <a href="#services" class="text-lg font-medium text-calm-dark mobile-link">ΥΠΗΡΕΣΙΕΣ</a>
+            <a href="#space" class="text-lg font-medium text-calm-dark mobile-link">Ο ΧΩΡΟΣ</a>
+            <a href="#reviews" class="text-lg font-medium text-calm-dark mobile-link">ΑΞΙΟΛΟΓΗΣΕΙΣ</a>
+            <a href="#contact" class="px-8 py-3 bg-calm-ocean text-white rounded-full text-lg font-medium mobile-link">ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ</a>
+        </div>
+    </nav>
+
+    <section class="relative min-h-[95vh] flex items-center pt-32 pb-20 px-6 overflow-hidden">
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <div class="w-full h-full bg-cover bg-center animate-kenburns opacity-20 filter blur-[2px]" style="background-image: url('https://github.com/agelmet/GWGOU/blob/main/2025-11-26-7.jpg?raw=true');"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-calm-light via-calm-light/90 to-transparent"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-12 gap-12 items-center relative z-20">
+            
+            <div class="lg:col-span-7 reveal">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-calm-sand bg-white/50 text-calm-ocean text-xs font-bold mb-8 uppercase tracking-widest backdrop-blur-sm">
+                    <span class="w-2 h-2 rounded-full bg-calm-blush animate-pulse"></span>
+                    ΣΥΝΘΕΤΙΚΗ ΨΥΧΟΘΕΡΑΠΕΙΑ ΓΚΥΖΗ
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-serif text-calm-dark leading-[1.1] mb-6">
+                    Ολιστική Φροντίδα από την <span class="text-calm-ocean italic">Παιδική Ηλικία</span> έως την <span class="text-calm-ocean italic">Ενηλικίωση</span>.
+                </h1>
+                <p class="text-lg text-calm-stone mb-10 max-w-lg leading-relaxed font-light">
+                    Η Ειρήνη Γώγου (BSc, MSc) παρέχει έναν ασφαλή χώρο όπου η βαθιά κλινική εμπειρία συναντά την απόλυτη ενσυναίσθηση. Χτίστε στρατηγικές και βρείτε την εσωτερική σας ισορροπία.
+                </p>
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="#contact" class="px-8 py-4 bg-calm-dark text-white rounded-full font-medium hover:bg-calm-ocean transition-all shadow-glow flex items-center gap-3 group" style="--glow-color: rgba(92, 116, 132, 0.4);">
+                        ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 relative reveal reveal-delay-2 hidden md:block">
+                <div class="absolute -inset-4 bg-calm-sand/20 rounded-[3rem] transform -rotate-3 backdrop-blur-sm"></div>
+                <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl img-zoom border border-white/40 glass-panel">
+                    <img src="https://github.com/agelmet/GWGOU/blob/main/2025-11-26-6.jpg?raw=true" alt="Ειρήνη Γώγου Ψυχολόγος" class="w-full h-[600px] object-cover object-top filter contrast-[0.95]">
+                </div>
+                
+                <div class="absolute bottom-10 -left-8 z-30 bg-white/90 p-5 rounded-2xl shadow-xl flex items-center gap-4 animate-float border border-white/50 backdrop-blur-md">
+                    <div class="w-12 h-12 rounded-full bg-calm-blush/20 flex items-center justify-center text-calm-dark">
+                        <i data-lucide="award" class="w-6 h-6 text-calm-blush"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-bold text-calm-dark uppercase tracking-wider">MSc Ιατρικης ΕΚΠΑ</p>
+                        <p class="text-xs text-calm-stone">Κλινική Εμπειρία 1ης Γραμμής</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-calm-light to-transparent z-20"></div>
+    </section>
+
+    <section id="about" class="py-24 px-6 bg-calm-light relative">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            
+            <div class="relative reveal order-2 lg:order-1">
+                <div class="aspect-[3/4] max-w-md mx-auto rounded-[3rem] overflow-hidden shadow-soft animate-float" style="animation-duration: 8s;">
+                    <img src="https://github.com/agelmet/GWGOU/blob/main/2025-11-26-5.jpg?raw=true" alt="Ειρήνη Γώγου - Προφίλ" class="w-full h-full object-cover filter brightness-[1.05]">
+                </div>
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-calm-sand/10 rounded-full z-[-1] blur-2xl"></div>
+            </div>
+
+            <div class="reveal reveal-delay-2 order-1 lg:order-2">
+                <span class="text-calm-ocean font-bold tracking-[0.2em] text-sm uppercase mb-4 block">ΓΝΩΡΙΣΤΕ ΤΗΝ ΕΙΔΙΚΟ</span>
+                <h2 class="text-4xl md:text-5xl font-serif text-calm-dark mb-6">Ειρήνη Γώγου, BSc, MSc</h2>
+                <div class="space-y-5 text-calm-stone font-light leading-relaxed text-lg">
+                    <p>
+                        Η Ειρήνη Γώγου είναι αδειούχος Ψυχολόγος (Αρ. Αδείας: 1083324/27-10-2022) και Ψυχοθεραπεύτρια, διατηρώντας το ιδιωτικό της γραφείο στου Γκύζη. Μετά την αποφοίτησή της από το τμήμα Ψυχολογίας του <strong class="text-calm-dark font-medium">ΕΚΠΑ</strong>, προχώρησε σε μεταπτυχιακές σπουδές (MSc) στην «Ψυχική Υγεία και Ψυχιατρική Παιδιών και Εφήβων» στην <strong class="text-calm-dark font-medium">Ιατρική Σχολή του Πανεπιστημίου Αθηνών</strong>.
+                    </p>
+                    <p>
+                        Η θεραπευτική της προσέγγιση είναι <strong>Συνθετική</strong>. Αυτό σημαίνει πως προσαρμόζει τα θεραπευτικά εργαλεία στις μοναδικές ανάγκες του κάθε ανθρώπου, προσφέροντας απόλυτα εξατομικευμένη φροντίδα, μακριά από άκαμπτες θεωρίες.
+                    </p>
+                    <blockquote class="border-l-[3px] border-calm-ocean pl-6 py-2 my-8 text-2xl font-serif text-calm-dark italic bg-calm-ocean/5 rounded-r-2xl">
+                        "Ο πυρήνας της δουλειάς μου είναι ο άνθρωπος. Στόχος μου είναι να νιώσετε άμεσα πως βρίσκεστε σε έναν χώρο όπου ακούγεστε πραγματικά, χωρίς καμία απολύτως επίκριση."
+                    </blockquote>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-6 mt-10">
+                    <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/60 shadow-sm border border-white">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-calm-ocean shrink-0"></i>
+                        <div>
+                            <h4 class="font-bold text-calm-dark text-sm uppercase tracking-wide mb-1">ΚΛΙΝΙΚΗ ΕΜΠΕΙΡΙΑ</h4>
+                            <p class="text-xs text-calm-stone leading-relaxed">Θητεία σε Ψ.Ν.Α. Δαφνί & Παίδων «Αγία Σοφία» διαχειριζόμενη με ψυχραιμία από κρίσεις άγχους έως βαριά ψυχοπαθολογία.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/60 shadow-sm border border-white">
+                        <i data-lucide="graduation-cap" class="w-8 h-8 text-calm-blush shrink-0"></i>
+                        <div>
+                            <h4 class="font-bold text-calm-dark text-sm uppercase tracking-wide mb-1">ΥΨΗΛΗ ΕΞΕΙΔΙΚΕΥΣΗ</h4>
+                            <p class="text-xs text-calm-stone leading-relaxed">Μεταπτυχιακό Ιατρικής Σχολής ΕΚΠΑ. Εγγύηση για γονείς που αναζητούν άρτια καταρτισμένο ειδικό.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 px-6 relative bg-[#F5F3F0]">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-calm-sand/20 rounded-l-[100px] z-0"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="text-calm-ocean font-bold tracking-[0.2em] text-sm uppercase mb-4 block">ΕΞΕΙΔΙΚΕΥΜΕΝΕΣ ΥΠΗΡΕΣΙΕΣ</span>
+                <h2 class="text-4xl md:text-5xl font-serif text-calm-dark mb-6">Πώς Μπορούμε να Βοηθήσουμε</h2>
+                <div class="w-16 h-1 bg-calm-ocean/40 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                
+                <div class="bg-white p-10 rounded-[2rem] group relative overflow-hidden reveal shadow-soft border border-calm-sand/30 hover:-translate-y-2 transition-transform duration-500">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-calm-ocean/5 rounded-bl-[100px] group-hover:bg-calm-ocean/10 transition-colors duration-500"></div>
+                    <div class="w-14 h-14 bg-calm-light rounded-2xl flex items-center justify-center mb-6 border border-calm-sand/50 group-hover:scale-110 transition-transform">
+                        <i data-lucide="user" class="w-6 h-6 text-calm-ocean"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-calm-dark mb-4">Ατομική Ψυχοθεραπεία Ενηλίκων</h3>
+                    <p class="text-calm-stone font-light mb-6 leading-relaxed">
+                        Η καθημερινότητα συχνά μας φέρνει αντιμέτωπους με έντονο στρες, καταθλιπτικά συναισθήματα και ανεξέλεγκτο θυμό. Εντοπίζουμε τη ρίζα αυτών των δυσκολιών για να ανακτήσετε τη λειτουργικότητα και τη χαρά σας.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-calm-light text-calm-dark text-xs font-medium rounded-full border border-calm-sand/50">Άγχος & Διάθεση</span>
+                        <span class="px-3 py-1 bg-calm-light text-calm-dark text-xs font-medium rounded-full border border-calm-sand/50">Διαχείριση Θυμού</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-10 rounded-[2rem] group relative overflow-hidden reveal reveal-delay-1 shadow-soft border border-calm-sand/30 hover:-translate-y-2 transition-transform duration-500">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-calm-blush/5 rounded-bl-[100px] group-hover:bg-calm-blush/10 transition-colors duration-500"></div>
+                    <div class="w-14 h-14 bg-calm-light rounded-2xl flex items-center justify-center mb-6 border border-calm-sand/50 group-hover:scale-110 transition-transform">
+                        <i data-lucide="baby" class="w-6 h-6 text-calm-blush"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-calm-dark mb-4">Ψυχολογία Παιδιού & Εφήβου</h3>
+                    <p class="text-calm-stone font-light mb-6 leading-relaxed">
+                        Υπεύθυνη υποστήριξη αντλώντας από την εμπειρία στο Παίδων «Αγία Σοφία». Προσεγγίζουμε θέματα σχολικού εκφοβισμού, μαθησιακού άγχους και εφηβικής κατάθλιψης, σε στενή συνεργασία με την οικογένεια.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-calm-light text-calm-dark text-xs font-medium rounded-full border border-calm-sand/50">Σχολικός Εκφοβισμός</span>
+                        <span class="px-3 py-1 bg-calm-light text-calm-dark text-xs font-medium rounded-full border border-calm-sand/50">Εφηβεία</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-10 rounded-[2rem] group relative overflow-hidden reveal shadow-soft border border-calm-sand/30 hover:-translate-y-2 transition-transform duration-500">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-calm-stone/5 rounded-bl-[100px] group-hover:bg-calm-stone/10 transition-colors duration-500"></div>
+                    <div class="w-14 h-14 bg-calm-light rounded-2xl flex items-center justify-center mb-6 border border-calm-sand/50 group-hover:scale-110 transition-transform">
+                        <i data-lucide="brain-circuit" class="w-6 h-6 text-calm-stone"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-calm-dark mb-4">Εξειδικευμένη Κλινική Παρέμβαση</h3>
+                    <p class="text-calm-stone font-light mb-6 leading-relaxed">
+                        Αντιμετώπιση σύνθετων προκλήσεων με σταθερότητα και σεβασμό. Αξιοποιώντας την εμπειρία από ψυχιατρικές δομές, στοχεύουμε στην αποκατάσταση της εικόνας εαυτού και της ψυχικής ισορροπίας.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-calm-light text-calm-dark text-xs font-medium rounded-full border border-calm-sand/50">Διαταραχές Διατροφής</span>
+                        <span class="px-3 py-1 bg-calm-light text-calm-dark text-xs font-medium rounded-full border border-calm-sand/50">Διαταραχές Προσωπικότητας</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-10 rounded-[2rem] group relative overflow-hidden reveal reveal-delay-1 shadow-soft border border-calm-sand/30 hover:-translate-y-2 transition-transform duration-500">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-calm-sand/10 rounded-bl-[100px] group-hover:bg-calm-sand/20 transition-colors duration-500"></div>
+                    <div class="w-14 h-14 bg-calm-light rounded-2xl flex items-center justify-center mb-6 border border-calm-sand/50 group-hover:scale-110 transition-transform">
+                        <i data-lucide="laptop" class="w-6 h-6 text-calm-dark"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-calm-dark mb-4">Διαδικτυακή Ψυχοθεραπεία</h3>
+                    <p class="text-calm-stone font-light mb-6 leading-relaxed">
+                        Για όσους δυσκολεύονται να επισκεφθούν το γραφείο λόγω απόστασης ή απαιτητικού ωραρίου. Η ποιότητα, η εχεμύθεια και η ζεστασιά της θεραπευτικής σχέσης διατηρούνται ακέραιες.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-calm-light text-calm-dark text-xs font-medium rounded-full border border-calm-sand/50">Online Συνεδρία 50'</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="space" class="py-24 px-6 bg-calm-dark text-white relative">
+        <div class="absolute inset-0 z-0 opacity-10">
+            <div class="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-calm-ocean blur-[120px]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
+                <div class="max-w-2xl">
+                    <span class="text-calm-sand font-bold tracking-[0.2em] text-sm uppercase mb-4 block">ΤΟ ΓΡΑΦΕΙΟ ΜΑΣ ΣΤΟΥ ΓΚΥΖΗ</span>
+                    <h2 class="text-4xl md:text-5xl font-serif text-white mb-4">Ένας Χώρος Ηρεμίας</h2>
+                    <p class="text-calm-stone font-light text-lg">Σχεδιασμένος για να αποπνέει ζεστασιά και απόλυτη ιδιωτικότητα. Μπορείτε να κάνετε κλικ στις εικόνες για μεγέθυνση.</p>
+                </div>
+            </div>
+
+            <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+                <button class="w-full break-inside-avoid rounded-2xl overflow-hidden group relative reveal bg-white/5 p-2 border border-white/10" onclick="openLightbox('https://github.com/agelmet/GWGOU/blob/main/2025-11-26-2.jpg?raw=true')">
+                    <img src="https://github.com/agelmet/GWGOU/blob/main/2025-11-26-2.jpg?raw=true" alt="Χώρος Γραφείου" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-700">
+                    <div class="absolute inset-2 rounded-xl bg-calm-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                        <i data-lucide="zoom-in" class="w-8 h-8 text-white"></i>
+                    </div>
+                </button>
+                <button class="w-full break-inside-avoid rounded-2xl overflow-hidden group relative reveal reveal-delay-1 bg-white/5 p-2 border border-white/10" onclick="openLightbox('https://github.com/agelmet/GWGOU/blob/main/2025-11-26-3.jpg?raw=true')">
+                    <img src="https://github.com/agelmet/GWGOU/blob/main/2025-11-26-3.jpg?raw=true" alt="Χώρος Γραφείου" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-700">
+                    <div class="absolute inset-2 rounded-xl bg-calm-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                        <i data-lucide="zoom-in" class="w-8 h-8 text-white"></i>
+                    </div>
+                </button>
+                <button class="w-full break-inside-avoid rounded-2xl overflow-hidden group relative reveal reveal-delay-2 bg-white/5 p-2 border border-white/10" onclick="openLightbox('https://github.com/agelmet/GWGOU/blob/main/2025-11-26-4.jpg?raw=true')">
+                    <img src="https://github.com/agelmet/GWGOU/blob/main/2025-11-26-4.jpg?raw=true" alt="Χώρος Γραφείου" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-700">
+                    <div class="absolute inset-2 rounded-xl bg-calm-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                        <i data-lucide="zoom-in" class="w-8 h-8 text-white"></i>
+                    </div>
+                </button>
+                <button class="w-full break-inside-avoid rounded-2xl overflow-hidden group relative reveal bg-white/5 p-2 border border-white/10" onclick="openLightbox('https://github.com/agelmet/GWGOU/blob/main/2025-11-26-8.jpg?raw=true')">
+                    <img src="https://github.com/agelmet/GWGOU/blob/main/2025-11-26-8.jpg?raw=true" alt="Χώρος Γραφείου" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-700">
+                    <div class="absolute inset-2 rounded-xl bg-calm-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                        <i data-lucide="zoom-in" class="w-8 h-8 text-white"></i>
+                    </div>
+                </button>
+                <button class="w-full break-inside-avoid rounded-2xl overflow-hidden group relative reveal reveal-delay-1 bg-white/5 p-2 border border-white/10" onclick="openLightbox('https://github.com/agelmet/GWGOU/blob/main/2025-11-26-7.jpg?raw=true')">
+                    <img src="https://github.com/agelmet/GWGOU/blob/main/2025-11-26-7.jpg?raw=true" alt="Χώρος Γραφείου" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-700">
+                    <div class="absolute inset-2 rounded-xl bg-calm-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                        <i data-lucide="zoom-in" class="w-8 h-8 text-white"></i>
+                    </div>
+                </button>
+                <button class="w-full break-inside-avoid rounded-2xl overflow-hidden group relative reveal reveal-delay-2 bg-white/5 p-2 border border-white/10" onclick="openLightbox('https://github.com/agelmet/GWGOU/blob/main/2025-11-26.jpg?raw=true')">
+                    <img src="https://github.com/agelmet/GWGOU/blob/main/2025-11-26.jpg?raw=true" alt="Χώρος Γραφείου" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-700">
+                    <div class="absolute inset-2 rounded-xl bg-calm-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                        <i data-lucide="zoom-in" class="w-8 h-8 text-white"></i>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-calm-dark/95 flex items-center justify-center cursor-zoom-out" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-white hover:text-calm-sand transition-colors">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Προβολή Εικόνας" class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl cursor-default" onclick="event.stopPropagation()">
+    </div>
+
+    <section id="reviews" class="py-24 bg-calm-light overflow-hidden border-t border-calm-sand/30">
+        <div class="max-w-7xl mx-auto px-6 mb-12 text-center reveal">
+            <span class="text-calm-ocean font-bold tracking-[0.2em] text-sm uppercase mb-4 block">ΑΛΗΘΙΝΕΣ ΕΜΠΕΙΡΙΕΣ</span>
+            <h2 class="text-4xl md:text-5xl font-serif text-calm-dark mb-4">Τι Λένε οι Θεραπευόμενοι</h2>
+            <p class="text-calm-stone font-light text-lg">Η εμπιστοσύνη σας είναι η μεγαλύτερη απόδειξη της δουλειάς μας.</p>
+        </div>
+
+        <div class="w-full overflow-hidden relative pb-10">
+            <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-calm-light to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-calm-light to-transparent z-10"></div>
+            
+            <div class="marquee-container animate-marquee">
+                <div class="flex space-x-6 px-3">
+                    <a href="https://www.doctoranytime.gr/d/Psychologos/gogou-eirini" target="_blank" class="w-96 bg-white p-8 rounded-[2rem] shadow-soft shrink-0 border border-calm-sand/30 relative group block hover:shadow-lg transition-all">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <div class="flex items-center gap-1 text-yellow-500 mb-1">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                                <span class="font-bold text-calm-dark">10.0 / 10</span>
+                            </div>
+                            <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" class="h-5 da-icon" alt="Doctoranytime">
+                        </div>
+                        <p class="text-calm-stone font-light text-sm mb-6 italic leading-relaxed line-clamp-4">"Η κ. Γώγου με προσέγγισε με πολύ ωραίο τρόπο και προσπάθησε να κατανοήσει τα προβλήματα μου σε βάθος. Θα την συνιστούσα ανεπιφύλακτα!"</p>
+                        <div class="border-t border-calm-sand/30 pt-4">
+                            <p class="text-xs font-bold text-calm-dark uppercase">ΧΡΙΣΤΙΝΑ</p>
+                            <p class="text-xs text-calm-stone">05 Φεβρουαρίου 2026 • 1 αξιολόγηση</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.doctoranytime.gr/d/Psychologos/gogou-eirini" target="_blank" class="w-96 bg-white p-8 rounded-[2rem] shadow-soft shrink-0 border border-calm-sand/30 relative group block hover:shadow-lg transition-all">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <div class="flex items-center gap-1 text-yellow-500 mb-1">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                                <span class="font-bold text-calm-dark">10.0 / 10</span>
+                            </div>
+                            <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" class="h-5 da-icon" alt="Doctoranytime">
+                        </div>
+                        <p class="text-calm-stone font-light text-sm mb-6 italic leading-relaxed line-clamp-4">"Η κυρία Γώγου είναι εξαιρετική επαγγελματίας. Με βοήθησε να κατανοήσω καλύτερα τα συναισθήματα μου. Οι τεχνικές της ήταν αποτελεσματικές. Την συνιστώ ανεπιφύλακτα!"</p>
+                        <div class="border-t border-calm-sand/30 pt-4">
+                            <p class="text-xs font-bold text-calm-dark uppercase">DUMITRACHE</p>
+                            <p class="text-xs text-calm-stone">16 Δεκεμβρίου 2025 • 1 αξιολόγηση</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.doctoranytime.gr/d/Psychologos/gogou-eirini" target="_blank" class="w-96 bg-white p-8 rounded-[2rem] shadow-soft shrink-0 border border-calm-sand/30 relative group block hover:shadow-lg transition-all">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <div class="flex items-center gap-1 text-yellow-500 mb-1">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                                <span class="font-bold text-calm-dark">10.0 / 10</span>
+                            </div>
+                            <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" class="h-5 da-icon" alt="Doctoranytime">
+                        </div>
+                        <p class="text-calm-stone font-light text-sm mb-6 italic leading-relaxed line-clamp-4">"Είχα αλλάξει αρκετούς ψυχολόγους... Η κυρία Ειρήνη είναι η μόνη που κατάφερε να μείνω και με βοήθησε ουσιαστικά. Η εμπειρία μου ήταν σαν να έχεις ένα πραγματικό φίλο με εξειδίκευση!"</p>
+                        <div class="border-t border-calm-sand/30 pt-4">
+                            <p class="text-xs font-bold text-calm-dark uppercase">MARIOS</p>
+                            <p class="text-xs text-calm-stone">17 Οκτωβρίου 2025 • 1 αξιολόγηση</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.doctoranytime.gr/d/Psychologos/gogou-eirini" target="_blank" class="w-96 bg-white p-8 rounded-[2rem] shadow-soft shrink-0 border border-calm-sand/30 relative group block hover:shadow-lg transition-all">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <div class="flex items-center gap-1 text-yellow-500 mb-1">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                                <span class="font-bold text-calm-dark">10.0 / 10</span>
+                            </div>
+                            <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" class="h-5 da-icon" alt="Doctoranytime">
+                        </div>
+                        <p class="text-calm-stone font-light text-sm mb-6 italic leading-relaxed line-clamp-4">"Είναι εξαιρετική... Δεν μου ήταν εύκολο να εμπιστευτώ κάποιον, αλλά με ενέπνευσε τόσο πολύ να ανοιχτώ. Σας εγγυώμαι ότι θα σας κάνει να νιώσετε απίστευτα οικεία σχεδόν άμεσα."</p>
+                        <div class="border-t border-calm-sand/30 pt-4">
+                            <p class="text-xs font-bold text-calm-dark uppercase">ARTEMIS</p>
+                            <p class="text-xs text-calm-stone">06 Οκτωβρίου 2025 • 1 αξιολόγηση</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.doctoranytime.gr/d/Psychologos/gogou-eirini" target="_blank" class="w-96 bg-white p-8 rounded-[2rem] shadow-soft shrink-0 border border-calm-sand/30 relative group block hover:shadow-lg transition-all">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <div class="flex items-center gap-1 text-yellow-500 mb-1">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                                <span class="font-bold text-calm-dark">10.0 / 10</span>
+                            </div>
+                            <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" class="h-5 da-icon" alt="Doctoranytime">
+                        </div>
+                        <p class="text-calm-stone font-light text-sm mb-6 italic leading-relaxed line-clamp-4">"Πολύ καλή ψυχολόγος, με ενσυναίσθηση και επαγγελματισμό. Νιώθεις ότι σε ακούει πραγματικά και σε βοηθά να βρεις τις απαντήσεις μέσα σου."</p>
+                        <div class="border-t border-calm-sand/30 pt-4">
+                            <p class="text-xs font-bold text-calm-dark uppercase">AIMILIA</p>
+                            <p class="text-xs text-calm-stone">11 Οκτωβρίου 2025 • 1 αξιολόγηση</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="flex space-x-6 px-3" aria-hidden="true">
+                    <a href="https://www.doctoranytime.gr/d/Psychologos/gogou-eirini" target="_blank" class="w-96 bg-white p-8 rounded-[2rem] shadow-soft shrink-0 border border-calm-sand/30 relative group block hover:shadow-lg transition-all">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <div class="flex items-center gap-1 text-yellow-500 mb-1">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                                <span class="font-bold text-calm-dark">10.0 / 10</span>
+                            </div>
+                            <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" class="h-5 da-icon" alt="Doctoranytime">
+                        </div>
+                        <p class="text-calm-stone font-light text-sm mb-6 italic leading-relaxed line-clamp-4">"Η κ. Γώγου με προσέγγισε με πολύ ωραίο τρόπο και προσπάθησε να κατανοήσει τα προβλήματα μου σε βάθος. Θα την συνιστούσα ανεπιφύλακτα!"</p>
+                        <div class="border-t border-calm-sand/30 pt-4">
+                            <p class="text-xs font-bold text-calm-dark uppercase">ΧΡΙΣΤΙΝΑ</p>
+                            <p class="text-xs text-calm-stone">05 Φεβρουαρίου 2026 • 1 αξιολόγηση</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.doctoranytime.gr/d/Psychologos/gogou-eirini" target="_blank" class="w-96 bg-white p-8 rounded-[2rem] shadow-soft shrink-0 border border-calm-sand/30 relative group block hover:shadow-lg transition-all">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <div class="flex items-center gap-1 text-yellow-500 mb-1">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                                <span class="font-bold text-calm-dark">10.0 / 10</span>
+                            </div>
+                            <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" class="h-5 da-icon" alt="Doctoranytime">
+                        </div>
+                        <p class="text-calm-stone font-light text-sm mb-6 italic leading-relaxed line-clamp-4">"Η κυρία Γώγου είναι εξαιρετική επαγγελματίας. Με βοήθησε να κατανοήσω καλύτερα τα συναισθήματα μου. Οι τεχνικές της ήταν αποτελεσματικές. Την συνιστώ ανεπιφύλακτα!"</p>
+                        <div class="border-t border-calm-sand/30 pt-4">
+                            <p class="text-xs font-bold text-calm-dark uppercase">DUMITRACHE</p>
+                            <p class="text-xs text-calm-stone">16 Δεκεμβρίου 2025 • 1 αξιολόγηση</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.doctoranytime.gr/d/Psychologos/gogou-eirini" target="_blank" class="w-96 bg-white p-8 rounded-[2rem] shadow-soft shrink-0 border border-calm-sand/30 relative group block hover:shadow-lg transition-all">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <div class="flex items-center gap-1 text-yellow-500 mb-1">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                                <span class="font-bold text-calm-dark">10.0 / 10</span>
+                            </div>
+                            <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" class="h-5 da-icon" alt="Doctoranytime">
+                        </div>
+                        <p class="text-calm-stone font-light text-sm mb-6 italic leading-relaxed line-clamp-4">"Είχα αλλάξει αρκετούς ψυχολόγους... Η κυρία Ειρήνη είναι η μόνη που κατάφερε να μείνω και με βοήθησε ουσιαστικά. Η εμπειρία μου ήταν σαν να έχεις ένα πραγματικό φίλο με εξειδίκευση!"</p>
+                        <div class="border-t border-calm-sand/30 pt-4">
+                            <p class="text-xs font-bold text-calm-dark uppercase">MARIOS</p>
+                            <p class="text-xs text-calm-stone">17 Οκτωβρίου 2025 • 1 αξιολόγηση</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.doctoranytime.gr/d/Psychologos/gogou-eirini" target="_blank" class="w-96 bg-white p-8 rounded-[2rem] shadow-soft shrink-0 border border-calm-sand/30 relative group block hover:shadow-lg transition-all">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <div class="flex items-center gap-1 text-yellow-500 mb-1">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                                <span class="font-bold text-calm-dark">10.0 / 10</span>
+                            </div>
+                            <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" class="h-5 da-icon" alt="Doctoranytime">
+                        </div>
+                        <p class="text-calm-stone font-light text-sm mb-6 italic leading-relaxed line-clamp-4">"Είναι εξαιρετική... Δεν μου ήταν εύκολο να εμπιστευτώ κάποιον, αλλά με ενέπνευσε τόσο πολύ να ανοιχτώ. Σας εγγυώμαι ότι θα σας κάνει να νιώσετε απίστευτα οικεία σχεδόν άμεσα."</p>
+                        <div class="border-t border-calm-sand/30 pt-4">
+                            <p class="text-xs font-bold text-calm-dark uppercase">ARTEMIS</p>
+                            <p class="text-xs text-calm-stone">06 Οκτωβρίου 2025 • 1 αξιολόγηση</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.doctoranytime.gr/d/Psychologos/gogou-eirini" target="_blank" class="w-96 bg-white p-8 rounded-[2rem] shadow-soft shrink-0 border border-calm-sand/30 relative group block hover:shadow-lg transition-all">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <div class="flex items-center gap-1 text-yellow-500 mb-1">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                                <span class="font-bold text-calm-dark">10.0 / 10</span>
+                            </div>
+                            <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" class="h-5 da-icon" alt="Doctoranytime">
+                        </div>
+                        <p class="text-calm-stone font-light text-sm mb-6 italic leading-relaxed line-clamp-4">"Πολύ καλή ψυχολόγος, με ενσυναίσθηση και επαγγελματισμό. Νιώθεις ότι σε ακούει πραγματικά και σε βοηθά να βρεις τις απαντήσεις μέσα σου."</p>
+                        <div class="border-t border-calm-sand/30 pt-4">
+                            <p class="text-xs font-bold text-calm-dark uppercase">AIMILIA</p>
+                            <p class="text-xs text-calm-stone">11 Οκτωβρίου 2025 • 1 αξιολόγηση</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://www.doctoranytime.gr/d/Psychologos/gogou-eirini" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-8 py-3 bg-white border border-calm-sand/50 rounded-full text-sm font-bold text-calm-dark hover:border-calm-ocean hover:text-calm-ocean transition-all shadow-sm">
+                    Διαβάστε όλες τις αξιολογήσεις στο 
+                    <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" class="h-4" alt="Doctoranytime">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-calm-dark text-calm-light pt-24 pb-10 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-[40rem] h-[40rem] bg-calm-ocean/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+                
+                <div class="lg:col-span-2 reveal">
+                    <span class="text-2xl font-serif text-white mb-4 block">Ειρήνη Γώγου</span>
+                    <p class="text-calm-stone font-light max-w-md mb-8 leading-relaxed">
+                        Η επούλωση ξεκινά με ένα βήμα. Επικοινωνήστε για να ορίσουμε την πρώτη σας συνεδρία σε ένα περιβάλλον απόλυτης αποδοχής.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://www.doctoranytime.gr/d/Psychologos/gogou-eirini" target="_blank" class="inline-flex items-center justify-center bg-white text-calm-dark px-6 py-3 rounded-full font-bold hover:bg-calm-ocean hover:text-white transition-colors duration-300 shadow-lg">
+                            <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" alt="Doctoranytime" class="h-4 mr-3">
+                            Κλείστε Ραντεβού
+                        </a>
+                    </div>
+                </div>
+
+                <div class="reveal reveal-delay-1">
+                    <h4 class="text-sm font-bold text-white mb-6 uppercase tracking-widest text-calm-sand">ΕΠΙΚΟΙΝΩΝΙΑ</h4>
+                    <ul class="space-y-4 text-calm-stone font-light">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-calm-ocean shrink-0 mt-0.5"></i>
+                            <span>Παράσχου 104,<br>Γκύζη, Αττική</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-calm-ocean shrink-0"></i>
+                            <a href="tel:+306982797845" class="hover:text-white transition-colors text-lg">698 279 7845</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="reveal reveal-delay-2">
+                    <h4 class="text-sm font-bold text-white mb-6 uppercase tracking-widest text-calm-sand">ΩΡΑΡΙΟ ΛΕΙΤΟΥΡΓΙΑΣ</h4>
+                    <ul class="space-y-4 text-calm-stone font-light">
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="clock" class="w-5 h-5 text-calm-ocean shrink-0"></i>
+                            <span>ΔΕΥΤΕΡΑ - ΣΑΒΒΑΤΟ</span>
+                        </li>
+                        <li class="pl-8 text-sm text-calm-blush font-medium">Κατόπιν Ραντεβού</li>
+                    </ul>
+
+                    <div class="mt-8 flex gap-4">
+                        <a href="https://www.instagram.com/eirini_gogou_psychotherapist/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-calm-ocean transition-colors text-white border border-white/10">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ειρήνη-γώγου-91b9b1223/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-calm-ocean transition-colors text-white border border-white/10">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 reveal">
+                <p class="text-calm-stone text-sm font-light">© 2026 Ειρήνη Γώγου. Όλα τα δικαιώματα διατηρούνται.</p>
+                <p class="text-calm-stone text-sm font-light">
+                    Designed by <a href="https://advonmedia.com" target="_blank" rel="noopener" class="text-white font-medium hover:text-calm-ocean transition-colors">Advon Media</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Initialize Lucide Icons
+        lucide.createIcons();
+
+        // 2. Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+
+        // 3. Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.add('py-4');
+                navbar.classList.remove('py-2');
+            }
+        });
+
+        // 4. Scroll Reveal Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // 5. Lightbox Functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(imageSrc) {
+            lightboxImg.src = imageSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            setTimeout(() => {
+                lightboxImg.src = '';
+                document.body.style.overflow = '';
+            }, 500);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

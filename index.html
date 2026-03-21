@@ -24,12 +24,12 @@
                 extend: {
                     colors: {
                         calm: {
-                            ocean: '#5C7484',  // Muted Slate Blue
-                            sand: '#D6CEC4',   // Warm Taupe/Beige
-                            blush: '#C2A3A8',  // Dusty Mauve/Pink
-                            stone: '#8B9298',  // Cool Grey
-                            dark: '#5E4B3C',   // Calm Walnut Brown (Replaced Dark Blue)
-                            light: '#FAF9F8'   // Off-white background
+                            ocean: '#5C7484',  
+                            sand: '#D6CEC4',   
+                            blush: '#C2A3A8',  
+                            stone: '#8B9298',  
+                            dark: '#5E4B3C',   
+                            light: '#FAF9F8'   
                         }
                     },
                     fontFamily: {
@@ -43,7 +43,7 @@
                     },
                     animation: {
                         'blob': 'blob 12s infinite',
-                        'marquee': 'marquee 50s linear infinite',
+                        'marquee': 'marquee 30s linear infinite', /* Increased speed from 50s to 30s */
                         'kenburns': 'kenburns 20s ease-out both',
                         'float': 'float 6s ease-in-out infinite',
                         'float-slow': 'float 10s ease-in-out infinite',
@@ -159,9 +159,9 @@
 
     <section class="relative min-h-[95vh] flex items-center pt-32 pb-20 px-6 overflow-hidden">
         <div class="absolute inset-0 z-0 overflow-hidden">
-            <div class="w-full h-full bg-cover bg-center animate-kenburns opacity-80" style="background-image: url('https://github.com/agelmet/GWGOU/blob/main/2025-11-26-7.jpg?raw=true');"></div>
-            <div class="absolute inset-0 bg-gradient-to-r from-calm-light via-calm-light/90 to-transparent"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-calm-light via-transparent to-transparent lg:hidden"></div>
+            <div class="w-full h-full bg-cover bg-center animate-kenburns opacity-100" style="background-image: url('https://github.com/agelmet/GWGOU/blob/main/2025-11-26-7.jpg?raw=true');"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-calm-light via-calm-light/70 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-calm-light via-calm-light/20 to-transparent lg:hidden"></div>
         </div>
 
         <div class="max-w-7xl mx-auto w-full flex flex-col lg:flex-row gap-12 items-center relative z-20">
